@@ -26,23 +26,33 @@ A raw-socket SYN scanner with passive OS fingerprinting, service banner grabbing
 
 ## Installation
 
+### Recommended: Virtual Environment (Isolated Installation)
+
 ```bash
+# Clone the repository
 git clone https://github.com/your-username/network-tool.git
 cd network-tool
 
-# Install dependencies (may require sudo on some systems)
-sudo pip install -r requirements.txt
+# Create a virtual environment
+python3 -m venv venv
 
-# NOTE: If you are on a modern Linux distribution (like Arch, Debian 12, Ubuntu 24.04+)
-# you may encounter an "externally-managed-environment" error. To bypass this, run:
-# sudo pip install -r requirements.txt --break-system-packages
-```
+# Activate the virtual environment
+# On Linux/macOS:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
 
-Alternatively, you can install the package system-wide:
+# Install dependencies
+pip install -r requirements.txt
 
-```bash
-sudo pip install . --break-system-packages
-```
+# Install the package itself (this makes the `netfp` command available)
+pip install -e .
+
+# Verify installation
+netfp --help
+
+# When done, deactivate the environment
+deactivate
 
 ## Usage
 
